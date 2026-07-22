@@ -338,24 +338,49 @@ button, input { font: inherit; }
   .network-core { grid-row: 1; width: 132px; min-height: 70px; justify-self: center; margin-bottom: 12px; }
   .network-lines { display: none; }
   .database-foot { position: static; flex-direction: column; gap: 3px; padding: 10px 14px; }
-  .site-title { font-size: 8px; }
-  .page-hero-copy { padding: 46px 18px; }
-  .page-hero h1 { font-size: clamp(51px, 17vw, 80px); }
+  .site-header { grid-template-columns: 64px minmax(0, 1fr); }
+  .site-title { min-width: 0; overflow: hidden; font-size: 8px; white-space: nowrap; text-overflow: ellipsis; }
+  .site-nav { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); overflow: visible; }
+  .site-nav a { grid-column: span 2; min-width: 0; padding: 8px 4px; border-right: 1px solid var(--ink); font-size: 8px; }
+  .site-nav a:nth-child(3),
+  .site-nav a:nth-child(5) { border-right: 0; }
+  .site-nav a:nth-child(n + 4) { grid-column: span 3; border-top: 1px solid var(--ink); }
+  .page-main,
+  .page-hero,
+  .page-hero-copy,
+  .page-hero-side,
+  .content-pad,
+  .block-heading { min-width: 0; }
+  .page-hero-copy { overflow: hidden; padding: 46px 18px; }
+  .page-hero h1 { max-width: 100%; font-size: clamp(44px, 13.8vw, 58px); line-height: .84; }
   .page-summary { font-size: 12px; }
+  .page-hero-side { min-width: 0; gap: 16px; }
+  .page-hero-side p { min-width: 0; }
+  .page-hero-side .big-index { flex: 0 0 auto; font-size: clamp(74px, 26vw, 100px); }
   .content-pad { padding: 40px 14px; }
   .block-heading { grid-template-columns: 1fr; gap: 9px; }
   .agent-record { grid-template-columns: 50px 1fr; }
   .agent-record > div { padding: 15px; }
   .agent-number { font-size: 31px; }
+  .agent-id { min-width: 0; }
+  .agent-id h2 { max-width: 100%; font-size: clamp(30px, 10vw, 38px); overflow-wrap: anywhere; }
+  .clearance { flex-wrap: wrap; }
   .agent-data { grid-template-columns: 1fr; }
   .data-row:nth-child(2) { border-top-color: var(--line); }
   .specimen { min-height: 370px; padding: 18px; }
-  .specimen h2 { max-width: 84%; font-size: 48px; }
+  .specimen h2 { max-width: 84%; font-size: clamp(38px, 12vw, 48px); }
   .specimen dl { grid-template-columns: 1fr; }
+  .dossier-nav { scrollbar-width: thin; scrollbar-color: var(--ink) var(--paper); }
+  .dossier-nav a { scroll-snap-align: start; }
   .dossier-content { padding: 30px 14px; }
   .document-meta { grid-template-columns: 1fr 1fr; }
-  .dossier-section { grid-template-columns: 48px minmax(0, 1fr); gap: 12px; padding: 28px 0; }
-  .dossier-section > .dossier-index { font-size: 33px; }
+  .dossier-section { grid-template-columns: 40px minmax(0, 1fr); gap: 10px; padding: 28px 0; }
+  .dossier-section > .dossier-index { font-size: 31px; }
+  .dossier-copy { min-width: 0; }
+  .dossier-copy h2 { max-width: 100%; font-size: clamp(27px, 8.5vw, 34px); hyphens: auto; overflow-wrap: anywhere; }
+  .dossier-copy p,
+  .dossier-copy li,
+  .dossier-copy dd { overflow-wrap: anywhere; }
   .fact-grid { grid-template-columns: 1fr; }
   .asset-grid { grid-template-columns: 1fr; }
   .archive-intro { grid-template-columns: 1fr; }
