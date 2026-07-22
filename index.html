@@ -3,91 +3,76 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#101716">
-    <title>Щ.И.Т. — внутреннее досье</title>
-    <meta name="description" content="Открытая версия внутреннего информационного досье Щ.И.Т.">
+    <meta name="theme-color" content="#ecece8">
+    <meta name="description" content="База данных российского подразделения Щ.И.Т.">
+    <title>Щ.И.Т. — база данных</title>
     <link rel="stylesheet" href="style.css">
+    <script src="site.js" defer></script>
   </head>
-  <body>
-    <header class="topbar">
-      <a class="brand-logo" href="#top" aria-label="Щ.И.Т. — в начало"><img src="Материалы/Визуальные%20материалы/Логотип%20Щ.И.Т.%20—%20белый%20на%20чёрном.png" alt="Логотип Щ.И.Т."></a>
-      <a class="brand" href="#top">Щ.И.Т.</a>
-      <span class="classification">Открытая редакция</span>
-      <nav aria-label="Основная навигация">
-        <a href="#agents">Агенты</a>
-        <a href="#objects">Объекты</a>
-        <a href="#operations">Операции</a>
-      </nav>
-    </header>
+  <body class="home" data-page="home">
+    <main class="database-shell" aria-labelledby="database-title">
+      <canvas class="network-lines" aria-hidden="true"></canvas>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="site-title">
+      <header class="database-head">
+        <div class="system-mark" aria-hidden="true">ЩИТ://DB</div>
         <div>
-          <p class="eyebrow">ДОСЬЕ № 7-М/22 · ВЕРСИЯ 0.2</p>
-          <h1 id="site-title">Внутреннее<br>информационное досье</h1>
-          <p class="lead">Открытая версия рабочего архива российского подразделения Щ.И.Т.</p>
+          <p class="kicker">[ ВНУТРЕННЯЯ СЕТЬ / УЗЕЛ 01 ]</p>
+          <h1 id="database-title">База данных<br><span>Щ.И.Т.</span></h1>
         </div>
-        <div class="stamp" aria-label="Статус: в разработке">
-          <span>СТАТУС</span>
-          <strong>В РАЗРАБОТКЕ</strong>
+        <div class="access-readout">
+          <span>СЕАНС</span>
+          <strong>06</strong>
+          <small>ДОСТУП ПОДТВЕРЖДЁН</small>
         </div>
-      </section>
+      </header>
 
-      <section class="notice">
-        <strong>Доступ к полной версии:</strong> уровень 6 и выше.
-        Неустановленные сведения отмечаются в материалах отдельно.
-      </section>
+      <section class="network" aria-label="Разделы базы данных">
+        <a class="network-node node-agents" href="agents.html" data-node="agents">
+          <span class="node-code">DIR.01 / 003</span>
+          <strong>Агенты Щ.И.Т.</strong>
+          <small>Действующий состав</small>
+          <i aria-hidden="true">↗</i>
+        </a>
 
-      <section class="grid overview" aria-label="Краткая сводка">
-        <article><span>01</span><h2>Структура</h2><p>Штабы стран СНГ подчинены главному офису Российской Федерации.</p></article>
-        <article><span>02</span><h2>Контрразведка</h2><p>Организация «М.Е.Ч.» ведёт наблюдение и пытается получить российские архивы.</p></article>
-        <article><span>03</span><h2>Аномалии</h2><p>Зафиксированы объекты в Москве и Ростове-на-Дону.</p></article>
-      </section>
+        <a class="network-node node-departments" href="departments.html" data-node="departments">
+          <span class="node-code">DIR.02 / WIP</span>
+          <strong>Отделы Щ.И.Т.</strong>
+          <small>Реестр подразделений</small>
+          <i aria-hidden="true">↗</i>
+        </a>
 
-      <section class="section" id="agents" aria-labelledby="agents-title">
-        <p class="eyebrow">РАЗДЕЛ 06 · 16 · 19</p>
-        <h2 id="agents-title">Действующие агенты</h2>
-        <div class="grid cards">
-          <article class="card"><img class="agent-portrait" src="Материалы/Визуальные%20материалы/Карточка%20агента%20Ашу.png" alt="Карточка агента Ашу"><p class="card-number">АГЕНТ 01</p><h3>Ашу</h3><dl><div><dt>Допуск</dt><dd>Уровень 8</dd></div><div><dt>Статус</dt><dd>Действующий агент</dd></div><div><dt>Роль</dt><dd>Координация специальных операций</dd></div></dl></article>
-          <article class="card"><img class="agent-portrait" src="Материалы/Визуальные%20материалы/Карточка%20агента%20Мильбрат.png" alt="Карточка агента Мильбрат"><p class="card-number">АГЕНТ 02</p><h3>Мильбрат</h3><dl><div><dt>Допуск</dt><dd>Уровень 6</dd></div><div><dt>Статус</dt><dd>Действует в Ростове-на-Дону</dd></div><div><dt>Задача</dt><dd>Расследование аномалии гигантских раков</dd></div></dl></article>
-          <article class="card"><img class="agent-portrait" src="Материалы/Визуальные%20материалы/Карточка%20агента%20Мильсестра.png" alt="Карточка агента Мильсестра"><p class="card-number">АГЕНТ 03</p><h3>Мильсестра</h3><dl><div><dt>Допуск</dt><dd>Не установлен</dd></div><div><dt>Статус</dt><dd>Завербована</dd></div><div><dt>Задача</dt><dd>Содействие агенту Мильбрату</dd></div></dl></article>
-        </div>
-      </section>
+        <a class="network-node node-bestiary" href="bestiary.html" data-node="bestiary">
+          <span class="node-code">DIR.03 / 004</span>
+          <strong>Бестиарий</strong>
+          <small>Объекты и угрозы</small>
+          <i aria-hidden="true">↗</i>
+        </a>
 
-      <section class="section" id="objects" aria-labelledby="objects-title">
-        <p class="eyebrow">РАЗДЕЛ 08 · ВИЗУАЛЬНЫЙ МАТЕРИАЛ</p>
-        <h2 id="objects-title">Объект «Муравьи»</h2>
-        <div class="object-layout">
-          <figure>
-            <img src="Материалы/Визуальные%20материалы/Объект%20«Муравьи».png" alt="Инфографика гигантского муравья-киборга">
-            <figcaption>Приложенный визуальный материал. Статус расследования: продолжается.</figcaption>
-          </figure>
-          <article class="object-copy">
-            <p>Предварительная классификация: биомеханическая аномалия.</p>
-            <dl><div><dt>Район обнаружения</dt><dd>Москва, жилой дом С. В. Биммана</dd></div><div><dt>Описание</dt><dd>Гигантские муравьи-киборги с признаками зомбификации.</dd></div><div><dt>Известно</dt><dd>Увеличенный размер, кибернетические компоненты, агрессивность.</dd></div><div><dt>Не установлено</dt><dd>Происхождение, создатель, количество и способ управления.</dd></div></dl>
-          </article>
-        </div>
-      </section>
+        <a class="network-node node-structure" href="structure.html" data-node="structure">
+          <span class="node-code">DOC.00 / 020</span>
+          <strong>Полная информация<br>о структуре</strong>
+          <small>Внутреннее досье, версия 0.2</small>
+          <i aria-hidden="true">↗</i>
+        </a>
 
-      <section class="section" id="operations" aria-labelledby="operations-title">
-        <p class="eyebrow">РАЗДЕЛ 13 · 17 · 18</p>
-        <h2 id="operations-title">Активные угрозы и операции</h2>
-        <div class="timeline">
-          <article><time>МОСКВА</time><div><h3>Гигантские муравьи-киборги</h3><p>Биомеханическая аномалия. Обнаружена агентом Мильбратом. Расследование продолжается.</p></div></article>
-          <article><time>РОСТОВ-НА-ДОНУ</time><div><h3>Гигантские раки</h3><p>Приоритетная угроза. Предполагается причастность объектов к уничтожению местного филиала Щ.И.Т.</p></div></article>
-          <article><time>НЕ УСТАНОВЛЕНО</time><div><h3>Рок-вампиры, эмо-невидимки</h3><p>Цели упущены. Объекты невозможно увидеть наблюдателю с простудой.</p></div></article>
-          <article><time>ВНЕШНЯЯ УГРОЗА</time><div><h3>Организация «М.Е.Ч.»</h3><p>Активная разведывательная организация, нацеленная на получение засекреченных данных российского Щ.И.Т.</p></div></article>
+        <a class="network-node node-archive" href="archive.html" data-node="archive">
+          <span class="node-code">ARC.05 / 003</span>
+          <strong>Архив</strong>
+          <small>Арты и концепт-материалы</small>
+          <i aria-hidden="true">↗</i>
+        </a>
+
+        <div class="network-core" data-node="core" aria-hidden="true">
+          <span>ЦЕНТР</span>
+          <b>Щ</b>
+          <small>ONLINE</small>
         </div>
       </section>
 
-      <section class="section archive" aria-labelledby="archive-title">
-        <p class="eyebrow">АРХИВ</p>
-        <h2 id="archive-title">Материалы проекта</h2>
-        <a class="file-link" href="Щ.И.Т.%20—%20внутреннее%20информационное%20досье.md">Открыть полное внутреннее досье <span>→</span></a>
-        <a class="file-link" href="Реестр%20материалов.md">Открыть реестр материалов <span>→</span></a>
-      </section>
+      <footer class="database-foot">
+        <p>ДОКУМЕНТ № 7-М/22 · СОВЕРШЕННО СЕКРЕТНО</p>
+        <p><span class="status-dot"></span> СИСТЕМА АКТИВНА · <time data-clock>00:00:00</time> MSK</p>
+      </footer>
     </main>
-
-    <footer>Щ.И.Т. · Внутреннее информационное досье · Версия 0.2</footer>
   </body>
 </html>
